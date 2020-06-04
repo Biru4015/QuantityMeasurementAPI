@@ -1,26 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using QuantityManagerLayer.IManager;
-using QuantityModelLayer.Model;
-
-namespace QuantityMeasurementAPI.Controllers
+﻿namespace QuantityMeasurementAPI.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using QuantityManagerLayer.IManager;
+    using QuantityModelLayer.Model;
+
+    /// <summary>
+    /// This is controller class
+    /// </summary>
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
     public class QuantityController : ControllerBase
     {
+        /// <summary>
+        /// This is object of IQuantityManager
+        /// </summary>
         private readonly IQuantityManager manager;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="manager"></param>
         public QuantityController(IQuantityManager manager)
         {
             this.manager = manager;
         }
 
+        /// <summary>
+        /// Adding length conversion
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("length")]
         public ActionResult Post(Length model)
@@ -49,6 +64,10 @@ namespace QuantityMeasurementAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// This is getting list of length coversion
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("length")]
         public ActionResult<List<Length>> AllData()
@@ -58,6 +77,11 @@ namespace QuantityMeasurementAPI.Controllers
             //return a;
         }
 
+        /// <summary>
+        /// This is deleting the length converion id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("length/{id}")]
         public int Delete(int Id)
@@ -66,6 +90,11 @@ namespace QuantityMeasurementAPI.Controllers
             return delete;
         }
 
+        /// <summary>
+        /// This is adding volume converion
+        /// </summary>
+        /// <param name="vmodel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("volume")]
         public ActionResult PostVolume(Volume vmodel)
@@ -81,25 +110,19 @@ namespace QuantityMeasurementAPI.Controllers
                 if (vmodel.OptionType == OptionType.GallonToLiter.ToString())
                 {
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else if (vmodel.OptionType == OptionType.LitreToMilliliter.ToString())
                 {
-                    //double litre = 3.78;
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else if (vmodel.OptionType == OptionType.MilliliterToLiter.ToString())
                 {
-                    //double litre = 3.78;
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else
                 {
                     return NotFound();
                 }
-                //  return model.Result;
             }
             catch (CustomException)
             {
@@ -107,6 +130,10 @@ namespace QuantityMeasurementAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// This is getting all volume conversion
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("volume")]
         public ActionResult<List<Volume>> AllVolumeData()
@@ -115,6 +142,11 @@ namespace QuantityMeasurementAPI.Controllers
             return Ok(a);
         }
 
+        /// <summary>
+        /// This is deleting id of volume conversion
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("volume/{id}")]
         public int DeleteVolume(int Id)
@@ -123,6 +155,11 @@ namespace QuantityMeasurementAPI.Controllers
             return delete;
         }
 
+        /// <summary>
+        /// This adding weigth conversion id
+        /// </summary>
+        /// <param name="wmodel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("weight")]
         public ActionResult PostWeight(Weight wmodel)
@@ -137,34 +174,31 @@ namespace QuantityMeasurementAPI.Controllers
 
                 if (wmodel.OptionType == OptionType.KgToGrams.ToString())
                 {
-                    //double litre = 3.78;
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else if (wmodel.OptionType == OptionType.GramToKg.ToString())
                 {
-                    //double litre = 3.78;
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else if (wmodel.OptionType == OptionType.TonneToKgs.ToString())
                 {
-                    //double litre = 3.78;
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else
                 {
                     return NotFound();
                 }
             }
-            //  return model.Result;
             catch (CustomException)
             {
                 return BadRequest(CustomException.ExceptionType.TYPE_NOT_MATCH);
             }
         }
 
+        /// <summary>
+        /// This action is created for getting list of weight conversion
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("weight")]
         public ActionResult<List<Weight>> AllWeightData()
@@ -173,6 +207,11 @@ namespace QuantityMeasurementAPI.Controllers
             return Ok(a);
         }
 
+        /// <summary>
+        /// This action is deleting id of wieght conversion
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("weight/{id}")]
         public int DeleteWeight(int Id)
@@ -181,6 +220,11 @@ namespace QuantityMeasurementAPI.Controllers
             return delete;
         }
 
+        /// <summary>
+        /// This method is  created for adding tempreture conversion
+        /// </summary>
+        /// <param name="tmodel"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("temperature")]
         public ActionResult PostTemperature(Temperature tmodel)
@@ -196,19 +240,16 @@ namespace QuantityMeasurementAPI.Controllers
                 {
 
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else if (tmodel.OptionType == OptionType.FahrenheitToCelsius.ToString())
                 {
 
                     return Ok(res);
-                    //  return model.Result;
                 }
                 else
                 {
                     return NotFound();
                 }
-                //  return model.Result;
             }
             catch (CustomException)
             {
@@ -216,6 +257,10 @@ namespace QuantityMeasurementAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// This action is getting all the id of tempreture conversion
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("temperature")]
         public ActionResult<List<Temperature>> AllTemperatureData()
@@ -224,6 +269,11 @@ namespace QuantityMeasurementAPI.Controllers
             return Ok(a);
         }
 
+        /// <summary>
+        /// This action is created for deleting tempreture id.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("temperature/{id}")]
         public int DeleteTemperature(int Id)

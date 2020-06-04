@@ -1,24 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using QuantityManagerLayer.IManager;
-using QuantityManagerLayer.Manger;
-using QuantityModelLayer.Model;
-using QuantityRepositoryLayer.IRepository;
-using QuantityRepositoryLayer.Repository;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using Swashbuckle.AspNetCore.Swagger;
-
-namespace QuantityMeasurementAPI
+﻿namespace QuantityMeasurementAPI
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using QuantityManagerLayer.IManager;
+    using QuantityManagerLayer.Manger;
+    using QuantityModelLayer.Model;
+    using QuantityRepositoryLayer.IRepository;
+    using QuantityRepositoryLayer.Repository;
+    using Microsoft.EntityFrameworkCore.SqlServer;
+    using Swashbuckle.AspNetCore.Swagger;
+
+    /// <summary>
+    /// This is startup.cs class
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
