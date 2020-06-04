@@ -1,14 +1,17 @@
-﻿using QuantityModelLayer.Model;
-using QuantityRepositoryLayer.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-
-namespace QuantityRepositoryLayer.Repository
+﻿namespace QuantityRepositoryLayer.Repository
 {
+    using QuantityModelLayer.Model;
+    using QuantityRepositoryLayer.IRepository;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Linq;
+    using Microsoft.EntityFrameworkCore;
+
+    /// <summary>
+    /// This is repository class
+    /// </summary>
     public class QuantityRepository: IQuatityRepository
     {
         readonly DBContext db;
@@ -16,6 +19,11 @@ namespace QuantityRepositoryLayer.Repository
         {
             db = _db;
         }
+
+        /// <summary>
+        /// This method is for getting all the list of length conversion
+        /// </summary>
+        /// <returns>list</returns>
         public List<Length> AllData()
         {
             return (from p in db.Unit
@@ -29,29 +37,33 @@ namespace QuantityRepositoryLayer.Repository
                         OptionType = p.OptionType
                     }).ToList();
         }
+
+        /// <summary>
+        /// This method is created for deleting length list id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public int Delete(int Id)
         {
             int result = 0;
-
             if (db != null)
             {
                 var b = db.Unit.FirstOrDefault(x => x.Id == Id);
 
                 if (b != null)
                 {
-                    //Delete that post
                     db.Unit.Remove(b);
-
-                    //Commit the transaction
                     result = db.SaveChanges();
                 }
                 return result;
-
             }
             return result;
         }
 
-        //// Volume
+        /// <summary>
+        /// This method is created for getting all the list of volume conversion
+        /// </summary>
+        /// <returns>list</returns>
         public List<Volume> AllVolumeData()
         {
             return (from p in db.Volume
@@ -65,6 +77,12 @@ namespace QuantityRepositoryLayer.Repository
                         OptionType = p.OptionType
                     }).ToList();
         }
+
+        /// <summary>
+        /// This method is use for posting all the conversion in volume table
+        /// </summary>
+        /// <param name="volume"></param>
+        /// <returns></returns>
         public object PostAll(object volume)
         {
             if (db != null)
@@ -76,6 +94,11 @@ namespace QuantityRepositoryLayer.Repository
             return 0;
         }
 
+        /// <summary>
+        /// This method is created for deleting id of volume conversion
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public int DeleteVolume(int Id)
         {
             int result = 0;
@@ -97,7 +120,10 @@ namespace QuantityRepositoryLayer.Repository
             return result;
         }
 
-        //// Weights
+       /// <summary>
+       /// This method is created for getting ist of weight
+       /// </summary>
+       /// <returns></returns>
         public List<Weight> AllWeightData()
         {
 
@@ -113,6 +139,11 @@ namespace QuantityRepositoryLayer.Repository
                     }).ToList();
         }
 
+        /// <summary>
+        /// This method is created for deleting id of weight
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public int DeleteWeight(int Id)
         {
             int result = 0;
@@ -134,7 +165,10 @@ namespace QuantityRepositoryLayer.Repository
             return result;
         }
 
-        //// Temperature
+        /// <summary>
+        /// This method is created for getting all the list of tempreture table
+        /// </summary>
+        /// <returns></returns>
         public List<Temperature> AllTemperatureData()
         {
 
@@ -149,6 +183,11 @@ namespace QuantityRepositoryLayer.Repository
                     }).ToList();
         }
 
+        /// <summary>
+        /// This method is created for deleting id of tempreture table
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public int DeleteTemperature(int Id)
         {
             int result = 0;
