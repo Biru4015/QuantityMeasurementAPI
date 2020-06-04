@@ -1,19 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuantityModelLayer.Model
+﻿namespace QuantityModelLayer.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// This class contains the code for Option type convertor
+    /// </summary>
     public enum OptionType
     {
-        //lengths
+        //// All type of lengths invludes
         FeetToInch, InchToFeet, YardToInch,
-        //volumes
+        
+        //// All type of volumes includes
         GallonToLiter, LitreToMilliliter, MilliliterToLiter,
-        //Weights
+        
+        //// All type of Weights includes
         KgToGrams, TonneToKgs, GramToKg,
-        //Temperature
+        
+        // All type of Temperatures includes
         CelsiusToFahrenheit, FahrenheitToCelsius
-
     }
 }

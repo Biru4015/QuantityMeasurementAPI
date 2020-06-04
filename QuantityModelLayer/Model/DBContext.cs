@@ -13,19 +13,25 @@ namespace QuantityModelLayer.Model
 
         }
 
-        // Parameterized Constructor
+        /// <summary>
+        /// Parameterized Constructor 
+        /// </summary>
+        /// <param name="options"></param>
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
 
         }
-        // Navigation Properties Of Employee (Access The Properties Of Employee Class Using Object)
+
+        /// <summary>
+        ///  Navigation Properties Of Model classes
+        /// </summary>
         public virtual DbSet<Length> Unit { get; set; }
         public virtual DbSet<Volume> Volume { get; set; }
         public virtual DbSet<Weight> Weight { get; set; }
         public virtual DbSet<Temperature> Temperature { get; set; }
-        // Fluent API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            ////Length Builder
             modelBuilder.Entity<Length>(entity =>
             {
 
@@ -53,7 +59,7 @@ namespace QuantityModelLayer.Model
 
             });
 
-
+            ////Volume builder
             modelBuilder.Entity<Volume>(entity =>
             {
 
@@ -81,8 +87,7 @@ namespace QuantityModelLayer.Model
 
             });
 
-            //Weigths
-
+            //// Weigths builder
             modelBuilder.Entity<Weight>(entity =>
             {
 
@@ -109,8 +114,8 @@ namespace QuantityModelLayer.Model
                  .IsUnicode(false);
 
             });
-            //Temperature
 
+            //// Temperature builder
             modelBuilder.Entity<Temperature>(entity =>
             {
 
@@ -134,8 +139,5 @@ namespace QuantityModelLayer.Model
 
             });
         }
-
-
     }
-
 }
