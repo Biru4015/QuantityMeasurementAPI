@@ -1,20 +1,37 @@
-﻿using QuantityManagerLayer.IManager;
-using QuantityModelLayer.Model;
-using QuantityRepositoryLayer;
-using QuantityRepositoryLayer.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuantityManagerLayer.Manger
+﻿namespace QuantityManagerLayer.Manger
 {
+    using QuantityManagerLayer.IManager;
+    using QuantityModelLayer.Model;
+    using QuantityRepositoryLayer;
+    using QuantityRepositoryLayer.IRepository;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// This class contains the convertor method of all units
+    /// </summary>
     public class QuantityManager: IQuantityManager
     {
+        /// <summary>
+        /// Object of IQuantityRepository
+        /// </summary>
         private readonly IQuatityRepository unitRL;
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="unitRepoL"></param>
         public QuantityManager(IQuatityRepository unitRepoL)
         {
             unitRL = unitRepoL;
         }
+
+        /// <summary>
+        /// This method is created for converting lengths 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>object</returns>
         public object Post(Length model)
         {
 
@@ -46,19 +63,32 @@ namespace QuantityManagerLayer.Manger
             }
         }
 
+        /// <summary>
+        /// This method is created for getting all the list of lenght conversion
+        /// </summary>
+        /// <returns>list</returns>
         public List<Length> AllData()
         {
             var a = unitRL.AllData();
             return a;
         }
 
+        /// <summary>
+        /// This method is created for deleting id of length conversion
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public int Delete(int Id)
         {
             var delete = unitRL.Delete(Id);
             return delete;
         }
 
-        //// Volume
+        /// <summary>
+        /// This method is created for adding volume conversion
+        /// </summary>
+        /// <param name="vmodel"></param>
+        /// <returns>object</returns>
         public object PostV(Volume vmodel)
         {
             var res = unitRL.PostAll(vmodel);
@@ -68,19 +98,14 @@ namespace QuantityManagerLayer.Manger
                 {
                     double litre = 3.78;
                     vmodel.Result = vmodel.Gallon * Convert.ToInt32(litre);
-                    //  return model.Result;
                 }
                 else if (vmodel.OptionType.Equals(OptionType.LitreToMilliliter.ToString()))
                 {
-                    //double litre = 3.78;
                     vmodel.Result = vmodel.Litre * 1000;
-                    //  return model.Result;
                 }
                 else if (vmodel.OptionType.Equals(OptionType.MilliliterToLiter.ToString()))
-                {
-                    //double litre = 3.78;
+                { 
                     vmodel.Result = vmodel.Millilitre / 1000;
-                    //  return model.Result;
                 }
                 else
                 {
@@ -93,19 +118,33 @@ namespace QuantityManagerLayer.Manger
                 throw new CustomException(CustomException.ExceptionType.TYPE_NOT_MATCH, "Conversion Not Match");
             }
         }
+
+        /// <summary>
+        /// This method is created for getting list of volume conversion
+        /// </summary>
+        /// <returns></returns>
         public List<Volume> AllVolumeData()
         {
             var a = unitRL.AllVolumeData();
             return a;
         }
 
+        /// <summary>
+        /// This method is created for deleting volume id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns>id</returns>
         public int DeleteVolume(int Id)
         {
             var delete = unitRL.DeleteVolume(Id);
             return delete;
         }
 
-        //// Weights
+        /// <summary>
+        /// This method is created for adding weight conversion.
+        /// </summary>
+        /// <param name="wmodel"></param>
+        /// <returns></returns>
         public object PostWeight(Weight wmodel)
         {
             var res = unitRL.PostAll(wmodel);
@@ -114,21 +153,15 @@ namespace QuantityManagerLayer.Manger
 
                 if (wmodel.OptionType.Equals(OptionType.KgToGrams.ToString()))
                 {
-                    //double litre = 3.78;
                     wmodel.Result = wmodel.Kg * 1000;
-                    //  return model.Result;
                 }
                 else if (wmodel.OptionType.Equals(OptionType.GramToKg.ToString()))
                 {
-                    //double litre = 3.78;
                     wmodel.Result = wmodel.Gram / 1000;
-                    //  return model.Result;
                 }
                 else if (wmodel.OptionType.Equals(OptionType.TonneToKgs.ToString()))
                 {
-                    //double litre = 3.78;
                     wmodel.Result = wmodel.Ton * 900;
-                    //  return model.Result;
                 }
                 else
                 {
@@ -142,19 +175,32 @@ namespace QuantityManagerLayer.Manger
             }
         }
 
+        /// <summary>
+        /// This method is created for getting list of weight
+        /// </summary>
+        /// <returns>list</returns>
         public List<Weight> AllWeightData()
         {
             var a = unitRL.AllWeightData();
             return a;
         }
 
+        /// <summary>
+        /// This method is created for deleting id of weight conversion
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns>id</returns>
         public int DeleteWeight(int Id)
         {
             var delete = unitRL.DeleteWeight(Id);
             return delete;
         }
 
-        //// Temperature
+        /// <summary>
+        /// This method is adding tempreture conversion
+        /// </summary>
+        /// <param name="tmodel"></param>
+        /// <returns>object</returns>
         public object PostTemperature(Temperature tmodel)
         {
             var res = unitRL.PostAll(tmodel);
@@ -164,13 +210,11 @@ namespace QuantityManagerLayer.Manger
                 {
 
                     tmodel.Result = (tmodel.Celsius * 9 / 5) + 32;
-                    //  return model.Result;
                 }
                 else if (tmodel.OptionType.Equals(OptionType.FahrenheitToCelsius.ToString()))
                 {
 
                     tmodel.Result = (tmodel.Fahrenheit - 32)* 5 / 9;
-                    //  return model.Result;
                 }
                 else
                 {
@@ -184,12 +228,21 @@ namespace QuantityManagerLayer.Manger
             }
         }
 
+        /// <summary>
+        /// This method is created for getting list of tempreture conversion
+        /// </summary>
+        /// <returns>list</returns>
         public List<Temperature> AllTemperatureData()
         {
             var a = unitRL.AllTemperatureData();
             return a;
         }
 
+        /// <summary>
+        /// This method is created for deleting id of tempreture
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public int DeleteTemperature(int Id)
         {
             var delete = unitRL.DeleteTemperature(Id);
