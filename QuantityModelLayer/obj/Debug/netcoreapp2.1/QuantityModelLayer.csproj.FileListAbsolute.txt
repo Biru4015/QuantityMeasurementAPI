@@ -1,7 +1,6 @@
 C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\bin\Debug\netcoreapp2.1\QuantityModelLayer.deps.json
 C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\bin\Debug\netcoreapp2.1\QuantityModelLayer.dll
 C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\bin\Debug\netcoreapp2.1\QuantityModelLayer.pdb
-C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\obj\Debug\netcoreapp2.1\QuantityModelLayer.csprojAssemblyReference.cache
 C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\obj\Debug\netcoreapp2.1\QuantityModelLayer.csproj.CoreCompileInputs.cache
 C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\obj\Debug\netcoreapp2.1\QuantityModelLayer.AssemblyInfoInputs.cache
 C:\Users\Birendra Kumar\source\repos\QuantityMeasurementAPIS\QuantityModelLayer\obj\Debug\netcoreapp2.1\QuantityModelLayer.AssemblyInfo.cs

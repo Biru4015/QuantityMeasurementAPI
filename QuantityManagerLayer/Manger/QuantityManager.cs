@@ -49,7 +49,7 @@
                 }
                 else if (model.OptionType.Equals(OptionType.YardToInch.ToString()))
                 {
-                    model.Result = model.Yard / 3;
+                    model.Result = model.Yard * 3;
                 }
                 else
                 {
@@ -161,7 +161,7 @@
                 }
                 else if (wmodel.OptionType.Equals(OptionType.TonneToKgs.ToString()))
                 {
-                    wmodel.Result = wmodel.Ton * 900;
+                    wmodel.Result = wmodel.Ton * 1000;
                 }
                 else
                 {

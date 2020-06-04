@@ -25,7 +25,7 @@ namespace QuantityModelLayer.Model
         /// <summary>
         ///  Navigation Properties Of Model classes
         /// </summary>
-        public virtual DbSet<Length> Unit { get; set; }
+        public virtual DbSet<Length> Length { get; set; }
         public virtual DbSet<Volume> Volume { get; set; }
         public virtual DbSet<Weight> Weight { get; set; }
         public virtual DbSet<Temperature> Temperature { get; set; }

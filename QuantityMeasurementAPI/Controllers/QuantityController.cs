@@ -51,7 +51,14 @@
                 if (model.OptionType == OptionType.InchToFeet.ToString())
                 {
                     return Ok(res);
-
+                }
+                else if (model.OptionType == OptionType.FeetToInch.ToString())
+                {
+                    return Ok(res);
+                }
+                else if (model.OptionType == OptionType.YardToInch.ToString())
+                {
+                    return Ok(res);
                 }
                 else
                 {
@@ -83,7 +90,7 @@
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("length/{id}")]
+        [Route("{id}")]
         public int Delete(int Id)
         {
             var delete = manager.Delete(Id);
@@ -148,7 +155,7 @@
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("volume/{id}")]
+        //[Route("volume/{id}")]
         public int DeleteVolume(int Id)
         {
             var delete = manager.Delete(Id);
@@ -195,10 +202,6 @@
             }
         }
 
-        /// <summary>
-        /// This action is created for getting list of weight conversion
-        /// </summary>
-        /// <returns></returns>
         [HttpGet]
         [Route("weight")]
         public ActionResult<List<Weight>> AllWeightData()
@@ -207,11 +210,6 @@
             return Ok(a);
         }
 
-        /// <summary>
-        /// This action is deleting id of wieght conversion
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
         [HttpDelete]
         [Route("weight/{id}")]
         public int DeleteWeight(int Id)
@@ -221,7 +219,7 @@
         }
 
         /// <summary>
-        /// This method is  created for adding tempreture conversion
+        /// This method is  created for addin
         /// </summary>
         /// <param name="tmodel"></param>
         /// <returns></returns>

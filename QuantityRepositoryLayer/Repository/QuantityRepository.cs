@@ -26,7 +26,7 @@
         /// <returns>list</returns>
         public List<Length> AllData()
         {
-            return (from p in db.Unit
+            return (from p in db.Length
                     select new Length
                     {
                         Id = p.Id,
@@ -48,11 +48,11 @@
             int result = 0;
             if (db != null)
             {
-                var b = db.Unit.FirstOrDefault(x => x.Id == Id);
+                var b = db.Length.FirstOrDefault(x => x.Id == Id);
 
                 if (b != null)
                 {
-                    db.Unit.Remove(b);
+                    db.Length.Remove(b);
                     result = db.SaveChanges();
                 }
                 return result;
@@ -154,10 +154,7 @@
 
                 if (b != null)
                 {
-                    //Delete that post
                     db.Weight.Remove(b);
-
-                    //Commit the transaction
                     result = db.SaveChanges();
                 }
                 return result;
