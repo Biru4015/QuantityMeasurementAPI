@@ -38,6 +38,11 @@
                     }).ToList();
         }
 
+        /// <summary>
+        /// This method is created for adding length conversion
+        /// </summary>
+        /// <param name="Length"></param>
+        /// <returns></returns>
         public object PostAllLength(object Length)
         {
             if (db != null)
@@ -49,6 +54,11 @@
             return 0;
         }
 
+        /// <summary>
+        /// This method is created for updating length conversion
+        /// </summary>
+        /// <param name="lengthChanges"></param>
+        /// <returns></returns>
         public Task<int> UpdateLength(Length lengthChanges)
         {
             var employee = db.Length.Attach(lengthChanges);
@@ -113,6 +123,11 @@
             return 0;
         }
 
+        /// <summary>
+        /// This method is created for updating volume conversion
+        /// </summary>
+        /// <param name="volumeChanges"></param>
+        /// <returns></returns>
         public Task<int> UpdateVolume(Volume volumeChanges)
         {
             var employee = db.Volume.Attach(volumeChanges);
@@ -166,6 +181,11 @@
                     }).ToList();
         }
 
+        /// <summary>
+        /// This method is created for adding weight conversion
+        /// </summary>
+        /// <param name="Weight"></param>
+        /// <returns></returns>
         public object PostAllWeight(object Weight)
         {
             if (db != null)
@@ -177,6 +197,11 @@
             return 0;
         }
 
+        /// <summary>
+        /// This method is created for updating weight conversion
+        /// </summary>
+        /// <param name="weightChanges"></param>
+        /// <returns></returns>
         public Task<int> UpdateWeight(Weight weightChanges)
         {
             var employee = db.Weight.Attach(weightChanges);
@@ -226,6 +251,11 @@
                     }).ToList();
         }
 
+        /// <summary>
+        /// This method is created for adding tempreture conversion
+        /// </summary>
+        /// <param name="Temperature"></param>
+        /// <returns></returns>
         public object PostAllTempreture(object Temperature)
         {
             if (db != null)
@@ -237,6 +267,11 @@
             return 0;
         }
 
+        /// <summary>
+        /// This method is created for updating tempreture conversion
+        /// </summary>
+        /// <param name="tempretureChanges"></param>
+        /// <returns></returns>
         public Task<int> UpdateTempreture(Temperature tempretureChanges)
         {
             var employee = db.Temperature.Attach(tempretureChanges);
