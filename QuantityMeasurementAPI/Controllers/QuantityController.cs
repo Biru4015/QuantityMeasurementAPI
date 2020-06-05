@@ -70,6 +70,11 @@
             }
         }
 
+        /// <summary>
+        /// This action verb is created for updating length conversion
+        /// </summary>
+        /// <param name="lengthChanges"></param>
+        /// <returns></returns>
         [Route("UpdateLength")]
         [HttpPut]
         public async Task<IActionResult> UpdateLength(Length lengthChanges)
@@ -230,6 +235,11 @@
             }
         }
 
+        /// <summary>
+        /// This action verb is created for updating weight conversion
+        /// </summary>
+        /// <param name="weightChanges"></param>
+        /// <returns></returns>
         [Route("UpdateWeight")]
         [HttpPut]
         public async Task<IActionResult> UpdateWeight(Weight weightChanges)
@@ -245,6 +255,10 @@
             }
         }
 
+        /// <summary>
+        /// This action verb is created for getting all weight conversion
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("weight")]
         public ActionResult<List<Weight>> AllWeightData()
@@ -253,6 +267,11 @@
             return Ok(a);
         }
 
+        /// <summary>
+        /// This action verbs is created for deleting weight conversion
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("weight/{id}")]
         public int DeleteWeight(int Id)
@@ -298,6 +317,11 @@
             }
         }
 
+        /// <summary>
+        /// This method is created for updating tempreture conversion
+        /// </summary>
+        /// <param name="tempretureChanges"></param>
+        /// <returns></returns>
         [Route("UpdateTempreture")]
         [HttpPut]
         public async Task<IActionResult> UpdateTempreture(Temperature tempretureChanges)
@@ -312,6 +336,7 @@
                 return this.BadRequest();
             }
         }
+
         /// <summary>
         /// This action is getting all the id of tempreture conversion
         /// </summary>
