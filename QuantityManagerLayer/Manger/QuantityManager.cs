@@ -7,6 +7,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// This class contains the convertor method of all units
@@ -32,10 +33,10 @@
         /// </summary>
         /// <param name="model"></param>
         /// <returns>object</returns>
-        public object Post(Length model)
+        public object PostAllLength(Length model)
         {
 
-            var res = unitRL.PostAll(model);
+            var res = unitRL.PostAllLength(model);
 
             try
             {
@@ -63,13 +64,19 @@
             }
         }
 
+        public Task<int> UpdateLength(Length lengthChanges)
+        {
+            return this.unitRL.UpdateLength(lengthChanges);
+        }
+
+
         /// <summary>
         /// This method is created for getting all the list of lenght conversion
         /// </summary>
         /// <returns>list</returns>
-        public List<Length> AllData()
+        public List<Length> AllDataLength()
         {
-            var a = unitRL.AllData();
+            var a = unitRL.AllDataLength();
             return a;
         }
 
@@ -78,9 +85,9 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int Delete(int Id)
+        public int DeleteLength(int Id)
         {
-            var delete = unitRL.Delete(Id);
+            var delete = unitRL.DeleteLength(Id);
             return delete;
         }
 
@@ -89,9 +96,9 @@
         /// </summary>
         /// <param name="vmodel"></param>
         /// <returns>object</returns>
-        public object PostV(Volume vmodel)
+        public object PostAllVolume(Volume vmodel)
         {
-            var res = unitRL.PostAll(vmodel);
+            var res = unitRL.PostAllVolume(vmodel);
             try
             {
                 if (vmodel.OptionType.Equals(OptionType.GallonToLiter.ToString()))
@@ -117,6 +124,11 @@
             {
                 throw new CustomException(CustomException.ExceptionType.TYPE_NOT_MATCH, "Conversion Not Match");
             }
+        }
+
+        public Task<int> UpdateVolume(Volume volumeChanges)
+        {
+            return this.unitRL.UpdateVolume(volumeChanges);
         }
 
         /// <summary>
@@ -145,9 +157,9 @@
         /// </summary>
         /// <param name="wmodel"></param>
         /// <returns></returns>
-        public object PostWeight(Weight wmodel)
+        public object PostAllWeight(Weight wmodel)
         {
-            var res = unitRL.PostAll(wmodel);
+            var res = unitRL.PostAllWeight(wmodel);
             try
             {
 
@@ -173,6 +185,11 @@
             {
                 throw new CustomException(CustomException.ExceptionType.TYPE_NOT_MATCH, "Conversion Not Match");
             }
+        }
+
+        public Task<int> UpdateWeight(Weight weightChanges)
+        {
+            return this.unitRL.UpdateWeight(weightChanges);
         }
 
         /// <summary>
@@ -201,9 +218,9 @@
         /// </summary>
         /// <param name="tmodel"></param>
         /// <returns>object</returns>
-        public object PostTemperature(Temperature tmodel)
+        public object PostAllTempreture(Temperature tmodel)
         {
-            var res = unitRL.PostAll(tmodel);
+            var res = unitRL.PostAllTempreture(tmodel);
             try
             {
                 if (tmodel.OptionType.Equals(OptionType.CelsiusToFahrenheit.ToString()))
@@ -226,6 +243,11 @@
             {
                 throw new CustomException(CustomException.ExceptionType.TYPE_NOT_MATCH, "Conversion Not Match");
             }
+        }
+
+        public Task<int> UpdateTempreture(Temperature weightChanges)
+        {
+            return this.unitRL.UpdateTempreture(weightChanges);
         }
 
         /// <summary>

@@ -4,6 +4,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// This is interface of QuantityManager class
@@ -15,20 +16,22 @@
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        object Post(Length model);
+        object PostAllLength(Length model);
+
+        Task<int> UpdateLength(Length lengthChanges);
 
         /// <summary>
         /// This is getting list of length id
         /// </summary>
         /// <returns></returns>
-        List<Length> AllData();
+        List<Length> AllDataLength();
 
         /// <summary>
         /// This is deleting id of length
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int Delete(int Id);
+        int DeleteLength(int Id);
 
         /// <summary>
         /// This is getting all volume id.
@@ -48,13 +51,24 @@
         /// </summary>
         /// <param name="vmodel"></param>
         /// <returns></returns>
-        object PostV(Volume vmodel);
+        object PostAllVolume(Volume vmodel);
+
+        Task<int> UpdateVolume(Volume lengthChanges);
 
         /// <summary>
         /// This is getting id of weight
         /// </summary>
         /// <returns></returns>
         List<Weight> AllWeightData();
+
+        /// <summary>
+        /// Adding all the data of weight conversion
+        /// </summary>
+        /// <param name="weight"></param>
+        /// <returns></returns>
+        object PostAllWeight(Weight weight);
+
+        Task<int> UpdateWeight(Weight weightChanges);
 
         /// <summary>
         /// This is deleting Weight id
@@ -64,18 +78,13 @@
         int DeleteWeight(int Id);
 
         /// <summary>
-        /// This is adding Weight id
-        /// </summary>
-        /// <param name="wmodel"></param>
-        /// <returns></returns>
-        object PostWeight(Weight wmodel);
-
-        /// <summary>
         /// This is adding tempreture id
         /// </summary>
         /// <param name="tmodel"></param>
         /// <returns></returns>
-        object PostTemperature(Temperature tmodel);
+        object PostAllTempreture(Temperature tmodel);
+
+        Task<int> UpdateTempreture(Temperature lengthChanges);
 
         /// <summary>
         /// This is getting all tempreture id

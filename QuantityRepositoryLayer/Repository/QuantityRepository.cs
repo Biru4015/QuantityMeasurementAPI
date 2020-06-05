@@ -14,7 +14,7 @@
     /// </summary>
     public class QuantityRepository: IQuatityRepository
     {
-        readonly DBContext db;
+        private readonly DBContext db;
         public QuantityRepository(DBContext _db)
         {
             db = _db;
@@ -24,7 +24,7 @@
         /// This method is for getting all the list of length conversion
         /// </summary>
         /// <returns>list</returns>
-        public List<Length> AllData()
+        public List<Length> AllDataLength()
         {
             return (from p in db.Length
                     select new Length
@@ -38,12 +38,31 @@
                     }).ToList();
         }
 
+        public object PostAllLength(object Length)
+        {
+            if (db != null)
+            {
+                db.Add(Length);
+                db.SaveChanges();
+                return Length;
+            }
+            return 0;
+        }
+
+        public Task<int> UpdateLength(Length lengthChanges)
+        {
+            var employee = db.Length.Attach(lengthChanges);
+            employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var result = db.SaveChangesAsync();
+            return result;
+        }
+
         /// <summary>
         /// This method is created for deleting length list id
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int Delete(int Id)
+        public int DeleteLength(int Id)
         {
             int result = 0;
             if (db != null)
@@ -83,7 +102,7 @@
         /// </summary>
         /// <param name="volume"></param>
         /// <returns></returns>
-        public object PostAll(object volume)
+        public object PostAllVolume(object volume)
         {
             if (db != null)
             {
@@ -92,6 +111,14 @@
                 return volume;
             }
             return 0;
+        }
+
+        public Task<int> UpdateVolume(Volume volumeChanges)
+        {
+            var employee = db.Volume.Attach(volumeChanges);
+            employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var result = db.SaveChangesAsync();
+            return result;
         }
 
         /// <summary>
@@ -139,6 +166,25 @@
                     }).ToList();
         }
 
+        public object PostAllWeight(object Weight)
+        {
+            if (db != null)
+            {
+                db.Add(Weight);
+                db.SaveChanges();
+                return Weight;
+            }
+            return 0;
+        }
+
+        public Task<int> UpdateWeight(Weight weightChanges)
+        {
+            var employee = db.Weight.Attach(weightChanges);
+            employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var result = db.SaveChangesAsync();
+            return result;
+        }
+
         /// <summary>
         /// This method is created for deleting id of weight
         /// </summary>
@@ -178,6 +224,25 @@
                         Result = p.Result,
                         OptionType = p.OptionType
                     }).ToList();
+        }
+
+        public object PostAllTempreture(object Temperature)
+        {
+            if (db != null)
+            {
+                db.Add(Temperature);
+                db.SaveChanges();
+                return Temperature;
+            }
+            return 0;
+        }
+
+        public Task<int> UpdateTempreture(Temperature tempretureChanges)
+        {
+            var employee = db.Temperature.Attach(tempretureChanges);
+            employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var result = db.SaveChangesAsync();
+            return result;
         }
 
         /// <summary>

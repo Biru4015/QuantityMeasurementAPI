@@ -13,14 +13,13 @@
     /// This is controller class
     /// </summary>
     [Route("api/[controller]")]
-    [Produces("application/json")]
     [ApiController]
     public class QuantityController : ControllerBase
     {
         /// <summary>
         /// This is object of IQuantityManager
         /// </summary>
-        private readonly IQuantityManager manager;
+        public readonly IQuantityManager manager;
 
         /// <summary>
         /// Constructor
@@ -38,14 +37,14 @@
         /// <returns></returns>
         [HttpPost]
         [Route("length")]
-        public ActionResult Post(Length model)
+        public ActionResult PostAllLength(Length model)
         {
 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var res = manager.Post(model);
+            var res = manager.PostAllLength(model);
             try
             {
                 if (model.OptionType == OptionType.InchToFeet.ToString())
@@ -71,17 +70,31 @@
             }
         }
 
+        [Route("UpdateLength")]
+        [HttpPut]
+        public async Task<IActionResult> UpdateLength(Length lengthChanges)
+        {
+            var result = await this.manager.UpdateLength(lengthChanges);
+            if (result == 1)
+            {
+                return this.Ok(lengthChanges);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
+
         /// <summary>
         /// This is getting list of length coversion
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         [Route("length")]
-        public ActionResult<List<Length>> AllData()
+        public ActionResult<List<Length>> AllDataLength()
         {
-            var a = manager.AllData();
+            var a = manager.AllDataLength();
             return Ok(a);
-            //return a;
         }
 
         /// <summary>
@@ -91,9 +104,9 @@
         /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        public int Delete(int Id)
+        public int DeleteLength(int Id)
         {
-            var delete = manager.Delete(Id);
+            var delete = manager.DeleteLength(Id);
             return delete;
         }
 
@@ -104,14 +117,14 @@
         /// <returns></returns>
         [HttpPost]
         [Route("volume")]
-        public ActionResult PostVolume(Volume vmodel)
+        public ActionResult PostAllVolume(Volume vmodel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var res = manager.PostV(vmodel);
+            var res = manager.PostAllVolume(vmodel);
             try
             {
                 if (vmodel.OptionType == OptionType.GallonToLiter.ToString())
@@ -137,6 +150,21 @@
             }
         }
 
+        [Route("UpdateVolume")]
+        [HttpPut]
+        public async Task<IActionResult> UpdateVolume(Volume volumeChanges)
+        {
+            var result = await this.manager.UpdateVolume(volumeChanges);
+            if (result == 1)
+            {
+                return this.Ok(volumeChanges);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
+
         /// <summary>
         /// This is getting all volume conversion
         /// </summary>
@@ -158,7 +186,7 @@
         //[Route("volume/{id}")]
         public int DeleteVolume(int Id)
         {
-            var delete = manager.Delete(Id);
+            var delete = manager.DeleteVolume(Id);
             return delete;
         }
 
@@ -169,13 +197,13 @@
         /// <returns></returns>
         [HttpPost]
         [Route("weight")]
-        public ActionResult PostWeight(Weight wmodel)
+        public ActionResult PostAllWeight(Weight wmodel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var res = manager.PostWeight(wmodel);
+            var res = manager.PostAllWeight(wmodel);
             try
             {
 
@@ -199,6 +227,21 @@
             catch (CustomException)
             {
                 return BadRequest(CustomException.ExceptionType.TYPE_NOT_MATCH);
+            }
+        }
+
+        [Route("UpdateWeight")]
+        [HttpPut]
+        public async Task<IActionResult> UpdateWeight(Weight weightChanges)
+        {
+            var result = await this.manager.UpdateWeight(weightChanges);
+            if (result == 1)
+            {
+                return this.Ok(weightChanges);
+            }
+            else
+            {
+                return this.BadRequest();
             }
         }
 
@@ -231,7 +274,7 @@
             {
                 return BadRequest(ModelState);
             }
-            var res = manager.PostTemperature(tmodel);
+            var res = manager.PostAllTempreture(tmodel);
             try
             {
                 if (tmodel.OptionType == OptionType.CelsiusToFahrenheit.ToString())
@@ -255,6 +298,20 @@
             }
         }
 
+        [Route("UpdateTempreture")]
+        [HttpPut]
+        public async Task<IActionResult> UpdateTempreture(Temperature tempretureChanges)
+        {
+            var result = await this.manager.UpdateTempreture(tempretureChanges);
+            if (result == 1)
+            {
+                return this.Ok(tempretureChanges);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
         /// <summary>
         /// This action is getting all the id of tempreture conversion
         /// </summary>
