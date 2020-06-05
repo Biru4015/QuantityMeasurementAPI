@@ -18,6 +18,11 @@
         /// <returns></returns>
         object PostAllLength(Length model);
 
+        /// <summary>
+        /// This method is created for updating length conversion
+        /// </summary>
+        /// <param name="lengthChanges"></param>
+        /// <returns></returns>
         Task<int> UpdateLength(Length lengthChanges);
 
         /// <summary>
@@ -53,6 +58,11 @@
         /// <returns></returns>
         object PostAllVolume(Volume vmodel);
 
+        /// <summary>
+        /// This method is created for updating length conversion
+        /// </summary>
+        /// <param name="lengthChanges"></param>
+        /// <returns></returns>
         Task<int> UpdateVolume(Volume lengthChanges);
 
         /// <summary>
@@ -68,6 +78,11 @@
         /// <returns></returns>
         object PostAllWeight(Weight weight);
 
+        /// <summary>
+        /// This method is created for updating weight conversion
+        /// </summary>
+        /// <param name="weightChanges"></param>
+        /// <returns></returns>
         Task<int> UpdateWeight(Weight weightChanges);
 
         /// <summary>
@@ -84,6 +99,11 @@
         /// <returns></returns>
         object PostAllTempreture(Temperature tmodel);
 
+        /// <summary>
+        /// This method is created for updating tempreture conversion
+        /// </summary>
+        /// <param name="lengthChanges"></param>
+        /// <returns></returns>
         Task<int> UpdateTempreture(Temperature lengthChanges);
 
         /// <summary>
