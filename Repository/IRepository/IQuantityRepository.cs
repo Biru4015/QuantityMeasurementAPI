@@ -1,10 +1,10 @@
-﻿using QuantityMeasurementModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuantityMeasurementRepository.IRepository
+﻿namespace QuantityMeasurementRepository.IRepository
 {
+    using QuantityMeasurementModel;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public interface IQuantityRepository
     {
         double FeetToInch(LengthUnit value);

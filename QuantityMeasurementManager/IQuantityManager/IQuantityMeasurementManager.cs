@@ -1,10 +1,13 @@
-﻿using QuantityMeasurementModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuantityMeasurementManager.IQuantityManager
+﻿namespace QuantityMeasurementManager.IQuantityManager
 {
+    using QuantityMeasurementModel;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// This is interface of QuantityMeasurementManager
+    /// </summary>
     public interface IQuantityMeasurementManager
     {
         double FeetToInch(LengthUnit value);
