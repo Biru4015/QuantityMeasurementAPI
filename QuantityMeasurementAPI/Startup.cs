@@ -60,6 +60,7 @@
             app.UseStaticFiles();
             app.UseDefaultFiles();
             app.UseHttpsRedirection();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
