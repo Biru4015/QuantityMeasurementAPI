@@ -36,7 +36,7 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteLength(int Id);
+        Length DeleteLength(int Id);
 
         /// <summary>
         /// This is getting all volume id.
@@ -49,7 +49,7 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteVolume(int Id);
+        Volume DeleteVolume(int Id);
 
         /// <summary>
         /// This is adding volume id
@@ -90,7 +90,7 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteWeight(int Id);
+        Weight DeleteWeight(int Id);
 
         /// <summary>
         /// This is adding tempreture id
@@ -117,6 +117,6 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteTemperature(int Id);
+        Temperature DeleteTemperature(int Id);
     }
 }

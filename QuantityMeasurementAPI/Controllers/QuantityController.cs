@@ -108,11 +108,10 @@
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete]
-        [Route("{id}")]
-        public int DeleteLength(int Id)
+        //[Route("{id}")]
+        public Length DeleteLength(int Id)
         {
-            var delete = manager.DeleteLength(Id);
-            return delete;
+            return this.manager.DeleteLength(Id);
         }
 
         /// <summary>
@@ -188,11 +187,10 @@
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpDelete]
-        //[Route("volume/{id}")]
-        public int DeleteVolume(int Id)
+        [Route("volume/{id}")]
+        public Volume DeleteVolume(int Id)
         {
-            var delete = manager.DeleteVolume(Id);
-            return delete;
+            return this.manager.DeleteVolume(Id);
         }
 
         /// <summary>
@@ -274,10 +272,9 @@
         /// <returns></returns>
         [HttpDelete]
         [Route("weight/{id}")]
-        public int DeleteWeight(int Id)
+        public Weight DeleteWeight(int Id)
         {
-            var delete = manager.DeleteWeight(Id);
-            return delete;
+            return this.manager.DeleteWeight(Id);
         }
 
         /// <summary>
@@ -356,10 +353,9 @@
         /// <returns></returns>
         [HttpDelete]
         [Route("temperature/{id}")]
-        public int DeleteTemperature(int Id)
+        public Temperature DeleteTemperature(int Id)
         {
-            var delete = manager.DeleteTemperature(Id);
-            return delete;
+            return this.manager.DeleteTemperature(Id);
         }
     }
 }

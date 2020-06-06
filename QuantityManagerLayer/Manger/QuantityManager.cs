@@ -90,10 +90,9 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int DeleteLength(int Id)
+        public Length DeleteLength(int Id)
         {
-            var delete = unitRL.DeleteLength(Id);
-            return delete;
+            return this.unitRL.DeleteLength(Id);
         }
 
         /// <summary>
@@ -156,10 +155,9 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns>id</returns>
-        public int DeleteVolume(int Id)
+        public Volume DeleteVolume(int Id)
         {
-            var delete = unitRL.DeleteVolume(Id);
-            return delete;
+            return this.unitRL.DeleteVolume(Id);
         }
 
         /// <summary>
@@ -222,10 +220,9 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns>id</returns>
-        public int DeleteWeight(int Id)
+        public Weight DeleteWeight(int Id)
         {
-            var delete = unitRL.DeleteWeight(Id);
-            return delete;
+            return this.unitRL.DeleteWeight(Id);
         }
 
         /// <summary>
@@ -285,10 +282,9 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int DeleteTemperature(int Id)
+        public Temperature DeleteTemperature(int Id)
         {
-            var delete = unitRL.DeleteTemperature(Id);
-            return delete;
+            return this.unitRL.DeleteTemperature(Id);
         }
     }
 }

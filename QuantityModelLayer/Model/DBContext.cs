@@ -59,7 +59,7 @@ namespace QuantityModelLayer.Model
 
             });
 
-            ////Volume builder
+            //// Volume builder
             modelBuilder.Entity<Volume>(entity =>
             {
 
@@ -136,7 +136,6 @@ namespace QuantityModelLayer.Model
                 entity.Property(e => e.OptionType)
                 .HasColumnName("OPTIONTYPE")
                  .IsUnicode(false);
-
             });
         }
     }

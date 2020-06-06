@@ -22,7 +22,7 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteLength(int Id);
+        Length DeleteLength(int Id);
 
         /// <summary>
         /// Adding length data
@@ -49,7 +49,7 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteVolume(int Id);
+        Volume DeleteVolume(int Id);
 
         /// <summary>
         /// This method is created for posting the object of volume convertor
@@ -90,7 +90,7 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteWeight(int Id);
+        Weight DeleteWeight(int Id);
 
         /// <summary>
         /// Adding tempreture conversion data
@@ -117,6 +117,6 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        int DeleteTemperature(int Id);
+        Temperature DeleteTemperature(int Id);
     }
 }

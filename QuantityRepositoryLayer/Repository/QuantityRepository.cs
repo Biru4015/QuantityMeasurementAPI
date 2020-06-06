@@ -72,21 +72,15 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int DeleteLength(int Id)
+        public Length DeleteLength(int Id)
         {
-            int result = 0;
-            if (db != null)
+            Length length = db.Length.Find(Id);
+            if (length != null)
             {
-                var b = db.Length.FirstOrDefault(x => x.Id == Id);
-
-                if (b != null)
-                {
-                    db.Length.Remove(b);
-                    result = db.SaveChanges();
-                }
-                return result;
+                db.Length.Remove(length);
+                db.SaveChanges();
             }
-            return result;
+            return length;
         }
 
         /// <summary>
@@ -141,31 +135,21 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int DeleteVolume(int Id)
+        public Volume DeleteVolume(int Id)
         {
-            int result = 0;
-
-            if (db != null)
+            Volume volume = db.Volume.Find(Id);
+            if (volume != null)
             {
-                var b = db.Volume.FirstOrDefault(x => x.Id == Id);
-
-                if (b != null)
-                {
-                    //Delete that post
-                    db.Volume.Remove(b);
-
-                    //Commit the transaction
-                    result = db.SaveChanges();
-                }
-                return result;
+                db.Volume.Remove(volume);
+                db.SaveChanges();
             }
-            return result;
+            return volume;
         }
 
-       /// <summary>
-       /// This method is created for getting ist of weight
-       /// </summary>
-       /// <returns></returns>
+        /// <summary>
+        /// This method is created for getting ist of weight
+        /// </summary>
+        /// <returns></returns>
         public List<Weight> AllWeightData()
         {
 
@@ -215,22 +199,15 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int DeleteWeight(int Id)
+        public Weight DeleteWeight(int Id)
         {
-            int result = 0;
-
-            if (db != null)
+            Weight weight = db.Weight.Find(Id);
+            if (weight != null)
             {
-                var b = db.Weight.FirstOrDefault(x => x.Id == Id);
-
-                if (b != null)
-                {
-                    db.Weight.Remove(b);
-                    result = db.SaveChanges();
-                }
-                return result;
+                db.Weight.Remove(weight);
+                db.SaveChanges();
             }
-            return result;
+            return weight;
         }
 
         /// <summary>
@@ -285,25 +262,15 @@
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public int DeleteTemperature(int Id)
+        public Temperature DeleteTemperature(int Id)
         {
-            int result = 0;
-
-            if (db != null)
+            Temperature temperature = db.Temperature.Find(Id);
+            if (temperature != null)
             {
-                var b = db.Temperature.FirstOrDefault(x => x.Id == Id);
-
-                if (b != null)
-                {
-                    //Delete that post
-                    db.Temperature.Remove(b);
-
-                    //Commit the transaction
-                    result = db.SaveChanges();
-                }
-                return result;
+                db.Temperature.Remove(temperature);
+                db.SaveChanges();
             }
-            return result;
+            return temperature;
         }
     }
 }
