@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj",
+        "projectName": "QuantityMeasurementAPI",
+        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementAPI\\QuantityMeasurementAPI.csproj",
+        "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.10, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
+        "projectName": "QuantityMeasurementManager",
+        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
+        "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementManager\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj"
+              },
+              "C:\\Users\\Birendra Kumar\\source\\repos\\Repository\\QuantityMeasurementRepository.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\Repository\\QuantityMeasurementRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
+        "projectName": "QuantityMeasurementModel",
+        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
+        "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Birendra Kumar\\source\\repos\\Repository\\QuantityMeasurementRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\Repository\\QuantityMeasurementRepository.csproj",
+        "projectName": "QuantityMeasurementRepository",
+        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\Repository\\QuantityMeasurementRepository.csproj",
+        "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
