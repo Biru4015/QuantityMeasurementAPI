@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.CodeAnalysis.CSharp;
     using QuantityMeasurementManager.IQuantityManager;
     using QuantityMeasurementModel;
 
@@ -43,9 +44,9 @@
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output=result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error="Conversion not possible"});
         }
 
         /// <summary>
@@ -61,9 +62,9 @@
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
 
         /// <summary>
@@ -79,9 +80,9 @@
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
 
         /// <summary>
@@ -97,9 +98,9 @@
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
 
         /// <summary>
@@ -115,9 +116,9 @@
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
 
         /// <summary>
@@ -132,10 +133,11 @@
             var result = this.manager.FeetToYard(value);
 
             if (result >= 0)
-            {
-                return this.Ok(result);
-            }
-            return this.BadRequest();
+                if (result >= 0)
+                {
+                    return this.Ok(new { output = result });
+                }
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
     }
 }
