@@ -35,9 +35,27 @@ namespace QuantityMeasurementAPI.Controllers
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
+        }
+
+        /// <summary>
+        /// This action verbs is created for converting litre to gallon
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [Route("LitreToGallon")]
+        [HttpPost]
+        public IActionResult LitreToGallon(VolumeUnit value)
+        {
+            var result = this.manager.LitreToGallon(value);
+
+            if (result >= 0)
+            {
+                return this.Ok(new { output = result });
+            }
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
 
         /// <summary>
@@ -53,9 +71,9 @@ namespace QuantityMeasurementAPI.Controllers
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
 
         /// <summary>
@@ -71,9 +89,9 @@ namespace QuantityMeasurementAPI.Controllers
 
             if (result >= 0)
             {
-                return this.Ok(result);
+                return this.Ok(new { output = result });
             }
-            return this.BadRequest();
+            return this.BadRequest(new { error = "Conversion not possible" });
         }
     }
 }
