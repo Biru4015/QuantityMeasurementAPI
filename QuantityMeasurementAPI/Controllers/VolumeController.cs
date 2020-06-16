@@ -22,76 +22,28 @@ namespace QuantityMeasurementAPI.Controllers
             this.manager = manager;
         }
 
-        /// <summary>
-        /// This action verb is created for converting gallon to litre
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("GallonToLitre")]
+        [Route("VolumePost")]
         [HttpPost]
-        public IActionResult GallonToLitre(VolumeUnit value)
+        public IActionResult VolumePost(VolumeUnit value)
         {
-            var result = this.manager.GallonToLitre(value);
-
-            if (result >= 0)
+            var res = manager.VolumePost(value);
+            try
             {
-                return this.Ok(new { output = result });
+                if (value.OptionType == OptionType.LitreToGallon.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.GallonToLitre.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.LitreToMiliLitre.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.MiliLitreToLitre.ToString())
+                    return this.Ok(new { output = res });
+                else
+                    return this.BadRequest(new { error = "Conversion not possible" });
             }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verbs is created for converting litre to gallon
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("LitreToGallon")]
-        [HttpPost]
-        public IActionResult LitreToGallon(VolumeUnit value)
-        {
-            var result = this.manager.LitreToGallon(value);
-
-            if (result >= 0)
+            catch (CustomException)
             {
-                return this.Ok(new { output = result });
+                return BadRequest(CustomException.ExceptionType.TYPE_NOT_MATCH);
             }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verbs is created for converting litre to mililitre
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("LitreToMiliLitre")]
-        [HttpPost]
-        public IActionResult LitreToMiliLitre(VolumeUnit value)
-        {
-            var result = this.manager.LitreToMiliLitre(value);
-
-            if (result >= 0)
-            {
-                return this.Ok(new { output = result });
-            }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verb is created for converting mililitre to litre
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("MiliLitreToLitre")]
-        [HttpPost]
-        public IActionResult MiliLitreToLitre(VolumeUnit value)
-        {
-            var result = this.manager.LitreToMiliLitre(value);
-
-            if (result >= 0)
-            {
-                return this.Ok(new { output = result });
-            }
-            return this.BadRequest(new { error = "Conversion not possible" });
         }
     }
 }

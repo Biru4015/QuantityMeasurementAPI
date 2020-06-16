@@ -13,6 +13,12 @@
         private double fahrenhiet;
         private double celcius;
 
+        [Key]
+        public int Id
+        {
+            get; set;
+        }
+
         [RegularExpression(@"^\d+(\.\d{1,2})?")]
         public double Fahrenhiet
         {
@@ -38,5 +44,6 @@
                 this.celcius = value;
             }
         }
+        public string OptionType { get; set; }
     }
 }

@@ -22,76 +22,28 @@ namespace QuantityMeasurementAPI.Controllers
             this.manager = manager;
         }
 
-        /// <summary>
-        /// This action verb is created for converting kilogram to gram
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("KilogramToGram")]
+        [Route("WeightPost")]
         [HttpPost]
-        public IActionResult KilogramToGram(WeightUnit value)
+        public IActionResult WeightPost(WeightUnit value)
         {
-            var result = this.manager.KilogramToGram(value);
-
-            if (result >= 0)
+            var res = manager.WeightPost(value);
+            try
             {
-                return this.Ok(new { output = result });
+                if (value.OptionType == OptionType.KilogramToGram.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.GramToKilogram.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.TonneToKilogram.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.KilogramToTonne.ToString())
+                    return this.Ok(new { output = res });
+                else
+                    return this.BadRequest(new { error = "Conversion not possible" });
             }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verb is created for converting gram to kilogram
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("GramToKilogram")]
-        [HttpPost]
-        public IActionResult GramToKilogram(WeightUnit value)
-        {
-            var result = this.manager.GramToKilogram(value);
-
-            if (result >= 0)
+            catch (CustomException)
             {
-                return this.Ok(new { output = result });
+                return BadRequest(CustomException.ExceptionType.TYPE_NOT_MATCH);
             }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verb is created for converting tonne to kilogram
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("TonneToKilogram")]
-        [HttpPost]
-        public IActionResult TonneToKilogram(WeightUnit value)
-        {
-            var result = this.manager.TonneToKilogram(value);
-
-            if (result >= 0)
-            {
-                return this.Ok(new { output = result });
-            }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verb is created for converting kilogram to tonne
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("KilogramToTonne")]
-        [HttpPost]
-        public IActionResult KilogramTonee(WeightUnit value)
-        {
-            var result = this.manager.KilogramToTonne(value);
-
-            if (result >= 0)
-            {
-                return this.Ok(new { output = result });
-            }
-            return this.BadRequest(new { error = "Conversion not possible" });
         }
     }
 }

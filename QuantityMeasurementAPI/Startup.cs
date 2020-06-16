@@ -8,13 +8,16 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using QuantityMeasurementManager.IQuantityManager;
     using QuantityMeasurementManager.QuantityManager;
+    using QuantityMeasurementRepository;
     using QuantityMeasurementRepository.IRepository;
     using QuantityMeasurementRepository.Repository;
     using Swashbuckle.AspNetCore.Swagger;
+    using Oracle.ManagedDataAccess.Client;
 
     /// <summary>
     /// This class contains the code of startup.cs
@@ -32,6 +35,7 @@
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<UserDbContext>(options => options.UseOracle(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddTransient<IQuantityMeasurementManager, QuantityMeasurementManagers>();
             services.AddTransient<IQuantityRepository, QuantityRepository>();

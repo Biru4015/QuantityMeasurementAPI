@@ -14,6 +14,12 @@
         private double gallon;
         private double milimeter;
 
+        [Key]
+        public int Id
+        {
+            get; set;
+        }
+
         [RegularExpression(@"^\d+(\.\d{1,2})?")]
         public double Litre
         {
@@ -52,5 +58,6 @@
                 this.milimeter = value;
             }
         }
+        public string OptionType { get; set; }
     }
 }

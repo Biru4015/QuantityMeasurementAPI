@@ -22,40 +22,23 @@ namespace QuantityMeasurementAPI.Controllers
             this.manager = manager;
         }
 
-        /// <summary>
-        /// This action verb is created for conveting fahrenhiet to celcius
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("FahrenhietToCelcius")]
+        [Route("TempreturePost")]
         [HttpPost]
-        public IActionResult FahrenhietToCelcius(TempretureUnit value)
+        public IActionResult TempreturePost(TempretureUnit value)
         {
-            var result = this.manager.FahrenhietToCelcius(value);
-
-            if (result >= 0)
+            var res = manager.TempreturePost(value);
+            try
             {
-                return this.Ok(new { output = result });
+                if (value.OptionType == OptionType.CelciusToFahrenhiet.ToString())
+                    return this.Ok(new { output = res });
+                else if (value.OptionType == OptionType.FahrenhietToCelcius.ToString())
+                    return this.Ok(new { output = res });
+                return this.BadRequest(new { error = "Conversion not possible" });
             }
-            return this.BadRequest(new { error = "Conversion not possible" });
-        }
-
-        /// <summary>
-        /// This action verbs is created for converting celcius to fahrenheit
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        [Route("CelciusToFahrenhiet")]
-        [HttpPost]
-        public IActionResult CelciusToFahrenhiet(TempretureUnit value)
-        {
-            var result = this.manager.CelciusToFahrenhiet(value);
-
-            if (result >= 0)
+            catch (CustomException)
             {
-                return this.Ok(new { output = result });
+                return BadRequest(CustomException.ExceptionType.TYPE_NOT_MATCH);
             }
-            return this.BadRequest(new { error = "Conversion not possible" });
         }
     }
 }

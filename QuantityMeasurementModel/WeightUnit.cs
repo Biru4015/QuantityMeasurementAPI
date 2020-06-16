@@ -14,6 +14,12 @@
         private double gram;
         private double tonne;
 
+        [Key]
+        public int Id
+        {
+            get; set;
+        }
+
         [RegularExpression(@"^\d+(\.\d{1,2})?")]
         public double Kilogram
         {
@@ -52,5 +58,6 @@
                 this.tonne = value;
             }
         }
+        public string OptionType { get; set; }
     }
 }

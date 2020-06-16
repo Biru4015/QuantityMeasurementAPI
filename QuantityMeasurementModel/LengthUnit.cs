@@ -2,16 +2,24 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Dynamic;
 
     /// <summary>
     /// This class contains the code of length units.
     /// </summary>
     public class LengthUnit
     {
+        
         private double feet;
         private double inch;
         private double centimeter;
         private double yard;
+
+        [Key]
+        public int Id
+        {
+            get; set;
+        }
 
         [RegularExpression(@"^\d+(\.\d{1,2})?")]
         public double Feet
@@ -64,5 +72,6 @@
                 this.yard = value;
             }
         }
+        public string OptionType { get; set; }
     }
 }
