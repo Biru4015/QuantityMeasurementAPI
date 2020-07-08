@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj": {}
+    "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj": {
+    "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
         "projectName": "QuantityMeasurementManager",
-        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
+        "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
         "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementManager\\obj\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
-                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj"
+              "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj"
               },
-              "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementRepository\\QuantityMeasurementRepository.csproj": {
-                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementRepository\\QuantityMeasurementRepository.csproj"
+              "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\Repository\\QuantityMeasurementRepository.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\Repository\\QuantityMeasurementRepository.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
+    "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
         "projectName": "QuantityMeasurementModel",
-        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
+        "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
         "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\obj\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,14 +121,14 @@
         }
       }
     },
-    "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementRepository\\QuantityMeasurementRepository.csproj": {
+    "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\Repository\\QuantityMeasurementRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementRepository\\QuantityMeasurementRepository.csproj",
+        "projectUniqueName": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\Repository\\QuantityMeasurementRepository.csproj",
         "projectName": "QuantityMeasurementRepository",
-        "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementRepository\\QuantityMeasurementRepository.csproj",
+        "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\Repository\\QuantityMeasurementRepository.csproj",
         "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementRepository\\obj\\",
+        "outputPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -144,8 +144,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
-                "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj"
+              "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj": {
+                "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj"
               }
             }
           }

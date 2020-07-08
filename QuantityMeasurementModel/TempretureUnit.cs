@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace QuantityMeasurementModel
+﻿namespace QuantityMeasurementModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
+
+    /// <summary>
+    /// This class contains the code for tempreture units.
+    /// </summary>
     public class TempretureUnit
     {
-        public double fahrenhiet;
-        public double celcius;
+        private double fahrenhiet;
+        private double celcius;
 
         [Key]
         public int Id
@@ -16,7 +19,7 @@ namespace QuantityMeasurementModel
             get; set;
         }
 
-        [RegularExpression(@"^\d+(\.\d{1,2})?")]
+        //[RegularExpression(@"^\d+(\.\d{1,2})?")]
         public double Fahrenhiet
         {
             get
@@ -29,7 +32,7 @@ namespace QuantityMeasurementModel
             }
         }
 
-        [RegularExpression(@"^\d+(\.\d{1,2})?")]
+        //S[RegularExpression(@"^\d+(\.\d{1,2})?")]
         public double Celcius
         {
             get
@@ -41,6 +44,6 @@ namespace QuantityMeasurementModel
                 this.celcius = value;
             }
         }
-        public string OptionType { get; set; }
+        public string TempretureOptions { get; set; }
     }
 }

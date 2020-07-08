@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QuantityMeasurementModel
+﻿namespace QuantityMeasurementModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     public class CustomException : Exception
     {
         /// <summary>

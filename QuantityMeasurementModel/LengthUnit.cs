@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace QuantityMeasurementModel
+﻿namespace QuantityMeasurementModel
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.Dynamic;
+
+    /// <summary>
+    /// This class contains the code of length units.
+    /// </summary>
     public class LengthUnit
     {
-
+        
         private double feet;
         private double inch;
         private double centimeter;
@@ -70,6 +72,6 @@ namespace QuantityMeasurementModel
                 this.yard = value;
             }
         }
-        public string OptionType { get; set; }
+        public string LengthOptions { get; set; }
     }
 }

@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace QuantityMeasurementModel
+﻿namespace QuantityMeasurementModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
+
+    /// <summary>
+    /// This class contains the code of volume units.
+    /// </summary>
     public class VolumeUnit
     {
-        public double litre;
-        public double gallon;
-        public double milimeter;
+        private double litre;
+        private double gallon;
+        private double milimeter;
 
         [Key]
         public int Id
@@ -55,6 +58,6 @@ namespace QuantityMeasurementModel
                 this.milimeter = value;
             }
         }
-        public string OptionType { get; set; }
+        public string VolumeOptions { get; set; }
     }
 }

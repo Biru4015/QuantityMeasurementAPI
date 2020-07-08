@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace QuantityMeasurementModel
+﻿namespace QuantityMeasurementModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
+
+    /// <summary>
+    /// This class contains the code of Weight units.
+    /// </summary>
     public class WeightUnit
     {
         private double kilogram;
@@ -44,7 +47,7 @@ namespace QuantityMeasurementModel
         }
 
         [RegularExpression(@"^\d+(\.\d{1,2})?")]
-        public double Tonee
+        public double Tonne
         {
             get
             {
@@ -55,6 +58,6 @@ namespace QuantityMeasurementModel
                 this.tonne = value;
             }
         }
-        public string OptionType { get; set; }
+        public string WeightOptions { get; set; }
     }
 }

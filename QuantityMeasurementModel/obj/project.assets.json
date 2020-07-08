@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
+      "projectUniqueName": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
       "projectName": "QuantityMeasurementModel",
-      "projectPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
+      "projectPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\QuantityMeasurementModel.csproj",
       "packagesPath": "C:\\Users\\Birendra Kumar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementModel\\obj\\",
+      "outputPath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementModel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Birendra Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",

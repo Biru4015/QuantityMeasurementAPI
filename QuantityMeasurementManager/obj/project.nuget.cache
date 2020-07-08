@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GESBeo+Jbe1eWIAVAbArDLc5O7sbScpwJBD0NSmvfSKGXSKReFgQNQCJVMzss+2Q4N7wKEI9IQsNCktU1lq8Qg==",
+  "dgSpecHash": "6NrrYOCtimzzm/n0WMzXSkIcn7uI7AjTxw8olppOiXHCYGW+YWz1c1Rtxxof5dvSivmn8HogeNFbaLl5RfKR3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Birendra Kumar\\source\\repos\\CiCd\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
+  "projectFilePath": "C:\\Users\\Birendra Kumar\\Desktop\\cicd\\QuantityAppDeployment\\Application\\QuantityMeasurementManager\\QuantityMeasurementManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Birendra Kumar\\.nuget\\packages\\microsoft.entityframeworkcore\\2.1.1\\microsoft.entityframeworkcore.2.1.1.nupkg.sha512",
     "C:\\Users\\Birendra Kumar\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\2.1.1\\microsoft.entityframeworkcore.abstractions.2.1.1.nupkg.sha512",
